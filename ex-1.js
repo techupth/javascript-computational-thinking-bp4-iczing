@@ -82,3 +82,15 @@ let orders = [
 ];
 
 // Start coding here
+function findMostExpensiveProduct(orders) {
+  let maxProduct = orders[0]
+  for (let order of orders) {
+    if (order.productPrice > maxProduct.productPrice) {
+      maxProduct = order
+    }
+  }
+  return maxProduct;
+}
+let mostExpensive = findMostExpensiveProduct(orders);
+console.log("Most Expensive Product");
+console.log(mostExpensive);
