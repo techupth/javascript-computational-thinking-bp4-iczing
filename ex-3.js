@@ -82,3 +82,24 @@ let orders = [
 ];
 
 // Start coding here
+function orderByCreditCardType(cardType, orders) {
+  let filterOrders = [];
+
+  for (let order of orders) {
+    if (order.creditCardType === cardType) {
+      filterOrders.push({
+        id: order.id,
+        customerName: order.customerName,
+        productName: order.productName,
+        productName: order.productPrice,
+        productQuantity: order.productQuantity,
+        creditCardType: order.creditCardType,
+      })
+    }
+  }
+  return filterOrders;
+}
+
+let cardType = "jcb"
+let jcbOrders = orderByCreditCardType(cardType, orders)
+console.log(jcbOrders);
